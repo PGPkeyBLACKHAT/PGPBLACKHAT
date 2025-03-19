@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGP Black Hat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PGP Black Hat</h1>
+        <textarea id="pgpKey" readonly>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: OpenPGP v4.0
+
+mQINBGEXAMPLEBEAC8FvP+HqR0TMi7zXc1F2bNDRC9Gn1qYwE2N3F9l3Q6ZcpKJ
+r5gzFgVKm+wPRoYVdM4k2L5MPaRTxgT7PBYPxEq5gMmTPz3AWI7YQ3hCRTMyml7x
+KZv7YKLNQU8XWx4F9PzV7NT8qLR9FqkV2KzDzN7X9Zz7B6W7mX6yN8fHkYjK+qVK
+UtZXo4p8X0BZLVY3qvW5bMJL8VcJ9zYz5MgqKvXGH53lPFqzBpOdDZVYzBZ7Fq3L
+LqO3Qw3FZKP+YKzN4B5WJMqZX6F7mLR8qF5ZJqLXzFqvWFq5MzB5pNLVKQ5XZGqP
+QpYKq5FQZ9p7mL4N3YvFJqX+Z6L4pXFqP4ZJQpLX9ZJGqW9mLRK5F3pZX+LFqZ6N
+L4pXFqXJ9ZJQZ6p7Fq5N3YvFJ6LX9ZJGqX9ZJQZ7p7Fq6N3YvFJ7LX9ZJGqX+ZJQ
+...
+=fake
+-----END PGP PUBLIC KEY BLOCK-----
+        </textarea>
+        <button onclick="copyPGPKey()">Copier</button>
+    </div>
+
+    <script>
+        function copyPGPKey() {
+            const pgpKey = document.getElementById("pgpKey");
+            pgpKey.select();
+            pgpKey.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("Clé PGP copiée !");
+        }
+    </script>
+</body>
+</html>
